@@ -1,7 +1,7 @@
 # LeetCode 560 - Subarray Sum Equals K
 
 **Difficulty:** Medium  
-**Language:** Python  
+**Language:** Python, Java
 **Topics:** Array, Hash Table, Prefix Sum
 
 ## Approach

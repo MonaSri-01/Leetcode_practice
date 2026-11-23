@@ -1,11 +1,18 @@
-class Solution:
-    def subarraySum(self, nums: List[int], k: int) -> int:
-        prefix = {0:1}
-        curr = 0
-        count = 0
-        for num in nums:
-            curr += num
-            if curr - k in prefix:
-                count += prefix[curr - k]
-            prefix[curr] = prefix.get(curr, 0) + 1
-        return count
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
+
+        int curr = 0;
+        int count = 0;
+
+        for (int ind = 0; ind < nums.length; ind ++){
+            curr += nums[ind];
+            if (map.containsKey(curr - k))
+               count += map.get(curr-k);
+            
+            map.put(curr, map.getOrDefault(curr, 0) + 1);
+        }
+        return count;
+    }
+}
